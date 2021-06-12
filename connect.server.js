@@ -1,7 +1,7 @@
-var express = require("express");
-var app = express();
-var bodyParser = require("body-parser");
-var mysql = require("mysql");
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const mysql = require("mysql");
 
 app.use(bodyParser.json());
 app.use(
@@ -16,7 +16,7 @@ app.get("/", function (reg, res) {
 });
 
 // Configure DB Connection
-var dbConn = mysql.createConnection({
+const dbConn = mysql.createConnection({
   host: "localhost",
   port: "3307",
   user: "root",
