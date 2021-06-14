@@ -27,6 +27,21 @@ const dbConn = mysql.createConnection({
 // DB Connect
 dbConn.connect();
 
+// Menampilkan data all user
+app.get("/data", function (req, res) {
+  dbConn.query(
+    "SELECT * FROM m_sop_luka_bakar",
+    function (error, results, fields) {
+      if (error) throw error;
+      return res.send({
+        error: false,
+        data: results,
+        message: "List data m_sop_luka_bakar.",
+      });
+    }
+  );
+});
+
 // Set Port
 
 app.listen(3000, function () {
