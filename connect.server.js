@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
+const knex = require("knex");
 
 app.use(bodyParser.json());
 app.use(
